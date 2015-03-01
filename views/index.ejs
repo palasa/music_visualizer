@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+  </head>
+  <body>
+  	<header>
+    	<h1><%= title %></h1>
+    	<ul class="type" id="type">
+    		<li data-type="dot">Dot</li>
+    		<li data-type="column" class="selected">Column</li>
+    	</ul>
+    	<p>
+    		Volume <input type="range" id="volume" min="0" max="100" value="30">
+    	</p>
+    </header>
+    <div id="list" class="list">
+    	<button class="music-add" id="add">
+    		Local music
+    	</button>
+    	<input class="upload" type="file" id="upload">
+    	<ul id="music-list" class="music-list">
+    		<% music.forEach(function(name){ %>
+    			<li title="<%= name %>"><%= name %></li>
+    		<% }) %>
+    		
+    	</ul>
+    </div>
+    <div class="canvas" id="canvas"></div>
+    <div class="loading-box" id="loading-box">
+      <ul id="loading">
+        <li class="l"></li>
+        <li class="o"></li>
+        <li class="a"></li>
+        <li class="d"></li>
+        <li class="i"></li>
+      </ul>
+      <div class="play" id="play">PLAY</div>
+    </div>
+    <script src="javascripts/MusicVisualizer.js"></script>
+    <script src="javascripts/index.js"></script>
+  </body>
+</html>
